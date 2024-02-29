@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Justily - Your Web Development Partner</title>
+
+    <style>
+      body,
+      html {
+        font-family: "Nunito", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="relative text-white">
+      <div class="relative flex justify-between items-center p-5 z-10">
+        <div class="flex items-center gap-10">
+          <h2 class="text-5xl font-bold">Justily</h2>
+          <div class="flex items-center gap-7">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <div class="flex items-center gap-2">
+              Our Work
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-circle-chevron-down"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 11l-3 3l-3 -3" />
+                <path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="border-2 rounded">
+          <form action="">
+            <div
+              class="flex items-center px-2 py-1 group focus-within:!bg-white"
+            >
+              <input
+                type="text"
+                class="w-[300px] bg-transparent px-4 py-1 outline-none border-none"
+                placeholder="Search keyword"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-search group-focus-within:stroke-black"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                <path d="M21 21l-6 -6" />
+              </svg>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="relative grid grid-cols-2 z-10 w-[90%] lg:w-[75%] py-20 mx-auto"
+      >
+        <div class="col-span-1 flex flex-col gap-7 pt-20">
+          <h1 class="text-6xl lg:text-7xl font-bold">
+            Build your website <br />
+            Better with us
+          </h1>
+          <h4 class="w-[70%]">
+            Our team of passionate web developers and designers is eager to help
+            you present your business online
+          </h4>
+          <button class="rounded-full bg-[#5aa6ff] px-10 font-bold py-5 w-fit">
+            Contact Us For Enquiry
+          </button>
+        </div>
+        <div class="col-span-1 overflow-visible">
+          <img
+            src="./src/images/hero.png"
+            class="w-100"
+            alt="Justily | Web Design and Development"
+          />
+        </div>
+      </div>
+      <svg
+        class="absolute top-0 right-0 z-0"
+        viewBox="0 0 1280 949"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0H1280V635.864L982.18 423.124C949.617 399.863 906.322 398.255 872.124 419.037L0 949V0Z"
+          fill="url(#paint0_radial_90_153)"
+        />
+        <defs>
+          <radialGradient
+            id="paint0_radial_90_153"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(243.5 336.606) rotate(2.23868) scale(878.671 1718.08)"
+          >
+            <stop stop-color="#5A92FF" />
+            <stop offset="0.39745" stop-color="#5E5AFF" />
+          </radialGradient>
+        </defs>
+      </svg>
+    </header>
+  </body>
+</html>
