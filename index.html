@@ -2,14 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Justily - Your Web Development Partner</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -21,57 +30,400 @@
         },
       };
     </script>
-    <title>Justily - Your Web Development Partner</title>
-
     <style>
       body,
       html {
-        font-family: "Nunito", sans-serif;
+        font-family: "Montserrat", sans-serif;
+      }
+      .swiper_benefits {
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 5%,
+          #000 65%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 45%,
+          #000 75%,
+          transparent
+        );
+      }
+
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px 30px 30px 30px;
+        min-height: 300px;
+        border-radius: 10px;
+        background-color: white;
+        /* border: 2px solid rgb(240, 240, 240); */
+        /* box-shadow: 5px 7px 15px rgb(237, 229, 237); */
       }
     </style>
   </head>
-  <body>
-    <header class="relative text-white">
-      <div class="relative flex justify-between items-center p-5 z-10">
-        <div class="flex items-center gap-10">
-          <h2 class="text-5xl font-bold">Justily</h2>
-          <div class="flex items-center gap-7">
-            <a href="">Home</a>
-            <a href="">About Us</a>
-            <div class="flex items-center gap-2">
-              Our Work
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-circle-chevron-down"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+  <body class="max-w-[2180px] mx-auto">
+    <header class="relative text-white mx-auto">
+      <svg
+        class="absolute top-0 right-0 z-0"
+        viewBox="0 0 1280 949"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 -1H1280V647.937L942.222 562.561C925.805 558.411 908.603 558.498 892.228 562.814L0 798V-1Z"
+          fill="url(#paint0_radial_90_153)"
+        />
+        <defs>
+          <radialGradient
+            id="paint0_radial_90_153"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(244.684 336.412) rotate(2.25623) scale(872.208 1718.78)"
+          >
+            <stop stop-color="#5A92FF" />
+            <stop offset="0.39745" stop-color="#5E5AFF" />
+          </radialGradient>
+        </defs>
+      </svg>
+
+      <div class="w-[80%] mx-auto">
+        <!-- header nav -->
+        <div
+          class="relative flex justify-between items-center mx-auto py-5 z-10"
+        >
+          <div class="flex items-center gap-10">
+            <h2 class="text-5xl font-bold">
+              <span class="text-amber-500">Just</span
+              ><span class="text-amber-400">ily</span>
+            </h2>
+            <div class="flex items-center gap-[70px] px-10">
+              <a href="" class="font-semibold">Home</a>
+              <a href="" class="font-semibold">About Us</a>
+              <div class="flex items-center gap-2 font-semibold">
+                Our Work
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-circle-chevron-down stroke-2"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 11l-3 3l-3 -3" />
+                  <path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- searchbox -->
+          <div class="border-2 border-indigo-100 rounded">
+            <form action="">
+              <div
+                class="flex items-center px-2 py-1 group focus-within:!bg-white bg-white"
               >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M15 11l-3 3l-3 -3" />
-                <path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18z" />
-              </svg>
+                <input
+                  type="text"
+                  class="w-[300px] bg-transparent px-4 py-1 outline-none border-none text-black text-sm rounded"
+                  placeholder="Search keyword"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-search stroke-black"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                  <path d="M21 21l-6 -6" />
+                </svg>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- hero banner -->
+        <div class="relative w-full transition-all ease duration-300">
+          <div class="grid grid-cols-2 z-10 py-20 mx-auto">
+            <div class="col-span-1 flex flex-col gap-7 pt-[20%]">
+              <h1 class="text-7xl font-bold">
+                <span class="">Build</span> your website <br />
+                <span class="">Better</span> with us
+              </h1>
+              <h4 class="w-[70%]">
+                Our team of passionate web developers and designers is eager to
+                help you present your business online
+              </h4>
+              <button
+                class="rounded-full drop-shadow-xl bg-white text-slate-600 text-lg py-3 px-10 font-bold py-4 w-fit flex items-center gap-3"
+              >
+                Contact Us For Enquiry
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-feather"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M4 20l10 -10m0 -5v5h5m-9 -1v5h5m-9 -1v5h5m-5 -5l4 -4l4 -4"
+                  />
+                  <path
+                    d="M19 10c.638 -.636 1 -1.515 1 -2.486a3.515 3.515 0 0 0 -3.517 -3.514c-.97 0 -1.847 .367 -2.483 1m-3 13l4 -4l4 -4"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <img
+            src="./src/images/hero.png"
+            class="w-[60%] min-[1280px]:w-[70%] absolute -right-[100px] top-20"
+            alt="Justily | Web Design and Development"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-[2180px] mx-auto">
+      <section
+        class="mt-[600px] max-[1480px]:mt-[300px] mb-[200px] mx-auto relative"
+      >
+        <h2
+          class="text-5xl font-bold text-center mb-16 w-[50%] mx-auto leading-[60px]"
+        >
+          What are our approach to web design and development
+        </h2>
+        <div class="swiper swiper_benefits relative cursor-grab p-5">
+          <div class="swiper-wrapper select-none">
+            <!-- Slides -->
+            <div
+              class="swiper-slide drop-shadow-lg bg-white rounded-lg hover:shadow-xl shadow-gray-200 transition-all ease-in-out duration-300"
+            >
+              <h4 class="text-xl mb-7 font-bold">Responsiveness</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Each page is designed to look good on tablets and mobile devices
+              </p>
+            </div>
+            <div
+              class="swiper-slide drop-shadow-lg bg-white rounded-lg hover:shadow-xl shadow-gray-200 transition-all ease-in-out duration-300"
+            >
+              <h4 class="text-xl mb-7 font-bold">Cross browser</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                In addition to Chrome, Mozilla, Edge, and Safari, we ensure that
+                our styling works on multiple browsers
+              </p>
+            </div>
+            <div
+              class="swiper-slide drop-shadow-lg bg-white rounded-lg hover:shadow-xl shadow-gray-200 transition-all ease-in-out duration-300"
+            >
+              <h4 class="text-xl mb-7 font-bold">Ease of use</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Our web pages are organized in a manner that makes navigation
+                clear and every element is placed where it should be
+              </p>
+            </div>
+            <div
+              class="swiper-slide drop-shadow-lg bg-white rounded-lg hover:shadow-xl shadow-gray-200 transition-all ease-in-out duration-300"
+            >
+              <h4 class="text-xl mb-7 font-bold">Attractive User Interface</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                We are always researching the latest UI/UX approaches across the
+                internet to make sure we follow the best designs to attract
+                visitors to your site.
+              </p>
+            </div>
+            <div
+              class="swiper-slide drop-shadow-lg bg-white rounded-lg hover:shadow-xl shadow-gray-200 transition-all ease-in-out duration-300"
+            >
+              <h4 class="text-xl mb-7 font-bold">Optimised for SEO</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Keeping in mind the best practices to optimize your site for
+                search engines is important to us, and we make sure your content
+                and keywords are searchable.
+              </p>
+            </div>
+          </div>
+          <div class="my-10 inline-flex justify-end items-end">
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- portfolio section -->
+      <section
+        class="mx-auto relative py-10"
+        style="
+          background: radial-gradient(
+            68.59% 180.99% at 19.02% 35.47%,
+            #5a92ff 0%,
+            #5e5aff 39.75%
+          );
+        "
+      >
+        <div
+          class="flex justify-between items-end font-bold text-white w-[70%] mx-auto py-6 p-4"
+        >
+          <h2 class="text-4xl">Our Work</h2>
+          <span class=""> Browse More </span>
+        </div>
+        <div class="swiper swiper_portfolio relative cursor-grab p-5">
+          <div class="swiper-wrapper select-none">
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Responsiveness</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Each page is designed to look good on tablets and mobile devices
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Cross browser</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                In addition to Chrome, Mozilla, Edge, and Safari, we ensure that
+                our styling works on multiple browsers
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Ease of use</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Our web pages are organized in a manner that makes navigation
+                clear and every element is placed where it should be
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Attractive User Interface</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                We are always researching the latest UI/UX approaches across the
+                internet to make sure we follow the best designs to attract
+                visitors to your site.
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Optimised for SEO</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Keeping in mind the best practices to optimize your site for
+                search engines is important to us, and we make sure your content
+                and keywords are searchable.
+              </p>
             </div>
           </div>
         </div>
-        <div class="border-2 rounded">
-          <form action="">
+        <div class="swiper swiper_portfolio_2 relative cursor-grab p-5">
+          <div class="swiper-wrapper select-none">
+            <!-- Slides -->
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Responsiveness</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Each page is designed to look good on tablets and mobile devices
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Cross browser</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                In addition to Chrome, Mozilla, Edge, and Safari, we ensure that
+                our styling works on multiple browsers
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Ease of use</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Our web pages are organized in a manner that makes navigation
+                clear and every element is placed where it should be
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Attractive User Interface</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                We are always researching the latest UI/UX approaches across the
+                internet to make sure we follow the best designs to attract
+                visitors to your site.
+              </p>
+            </div>
+            <div class="swiper-slide drop-shadow-lg bg-white rounded-lg">
+              <h4 class="text-xl mb-7 font-bold">Optimised for SEO</h4>
+              <p class="text-sm leading-6 text-gray-600">
+                Keeping in mind the best practices to optimize your site for
+                search engines is important to us, and we make sure your content
+                and keywords are searchable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- about us -->
+      <section class="bg-[#F2F1FF] bg-opacity-75 mb-[200px] mx-auto relative">
+        <div class="grid grid-cols-2 w-[70%] mx-auto py-40 p-5">
+          <div class="col-span-1 relative">
+            <div class="flex flex-col gap-5 pr-10">
+              <h2 class="text-4xl font-bold leading-[60px]">
+                <q
+                  >Our team specializes in web designing, assets making and
+                  website development</q
+                >
+              </h2>
+              <p class="w-[70%] text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
             <div
-              class="flex items-center px-2 py-1 group focus-within:!bg-white"
+              class="absolute right-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-500 to-transparent rounded-lg"
+            ></div>
+          </div>
+          <div class="col-span-1 flex flex-col items-end justify-end">
+            <div class="grid grid-cols-3 gap-4 py-7">
+              <div class="rounded-full bg-gray-300 h-40 w-40 overflow-hidden">
+                <img
+                  src="./src/images/Image_24.png"
+                  alt=""
+                  class="object-fill"
+                />
+              </div>
+              <div class="rounded-full bg-gray-300 h-40 w-40 overflow-hidden">
+                <img
+                  src="./src/images/Image_25.png"
+                  alt=""
+                  class="object-fill"
+                />
+              </div>
+              <div class="rounded-full bg-gray-300 h-40 w-40 overflow-hidden">
+                <img
+                  src="./src/images/Image_26.png"
+                  alt=""
+                  class="object-fill"
+                />
+              </div>
+            </div>
+            <button
+              class="rounded-full drop-shadow-xl bg-[#5E5AFF] text-white text-sm py-3 px-10 font-bold py-4 w-fit flex items-center gap-3"
             >
-              <input
-                type="text"
-                class="w-[300px] bg-transparent px-4 py-1 outline-none border-none"
-                placeholder="Search keyword"
-              />
+              Contact Us For Enquiry
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-search group-focus-within:stroke-black"
+                class="icon icon-tabler icon-tabler-feather"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -82,61 +434,184 @@
                 stroke-linejoin="round"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                <path d="M21 21l-6 -6" />
+                <path
+                  d="M4 20l10 -10m0 -5v5h5m-9 -1v5h5m-9 -1v5h5m-5 -5l4 -4l4 -4"
+                />
+                <path
+                  d="M19 10c.638 -.636 1 -1.515 1 -2.486a3.515 3.515 0 0 0 -3.517 -3.514c-.97 0 -1.847 .367 -2.483 1m-3 13l4 -4l4 -4"
+                />
               </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- search section -->
+      <section class="mt-[100px] mb-[200px] mx-auto relative">
+        <div class="w-[70%] mx-auto">
+          <h2 class="text-4xl font-bold mb-16 mx-auto leading-[60px]">
+            Alternately search our work which relate to your endeavour
+          </h2>
+          <div class="border-2 rounded p-4 shadow-xl shadow-gray-100">
+            <form action="">
+              <div
+                class="flex items-center px-2 py-1 group focus-within:!bg-white bg-white"
+              >
+                <input
+                  type="text"
+                  class="w-full bg-transparent px-4 py-1 outline-none border-none text-black rounded-lg"
+                  placeholder="Search keyword"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-search stroke-black"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                  <path d="M21 21l-6 -6" />
+                </svg>
+              </div>
+            </form>
+          </div>
+          <div class="flex justify-between items-end font-bold mx-auto pt-20">
+            <h4 class="text-2xl">Check our work by category</h4>
+            <span class="text-indigo-400 font-bold text-xl"> More... </span>
+          </div>
+          <div class="grid grid-cols-3 gap-7 mx-auto pt-10 pb-40 py-4">
+            <div
+              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400"
+            >
+              <img
+                src="./src/images/Image_24.png"
+                alt=""
+                class="w-full object-fill"
+              />
+              <div
+                class="absolute left-0 bottom-0 bg-[#1679C0] min-h-[50%] w-full z-20 rounded-b-xl"
+              ></div>
+            </div>
+            <div
+              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400"
+            >
+              <img
+                src="./src/images/Image_25.png"
+                alt=""
+                class="w-full object-fill"
+              />
+              <div
+                class="absolute left-0 bottom-0 bg-[#1679C0] bg-opacity-60 min-h-[50%] w-full z-20 rounded-b-xl"
+              ></div>
+            </div>
+            <div
+              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400"
+            >
+              <img
+                src="./src/images/Image_26.png"
+                alt=""
+                class="w-full object-fill"
+              />
+              <div
+                class="absolute left-0 bottom-0 bg-[#1679C0] min-h-[50%] w-full z-20 rounded-b-xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="w-full bg-black text-white py-20">
+      <div class="w-[70%] mx-auto grid grid-cols-3 p-5">
+        <div class="col-span-1 flex flex-col gap-2">
+          <h2 class="text-5xl font-bold mb-5">
+            <span class="text-amber-500">Just</span
+            ><span class="text-amber-400">ily</span>
+          </h2>
+          <a href="" class="font-bold text-lg">About Us</a>
+          <a href="" class="font-bold text-lg">More Work</a>
+          <a href="" class="font-bold text-lg">See us on Dribble</a>
+          <p class="font-thin w-40">
+            Devnloop Co, KL City Co Working Space, Kuala Lumpur 53200 , Malaysia
+          </p>
+          <p class="font-thin">03-2002020</p>
+          <p class="font-thin">devnloop@wonderplaces.com</p>
+        </div>
+        <div class="col-span-2 border-l border-indigo-200 px-20">
+          <form action="">
+            <div class="flex flex-col w-full gap-5">
+              <h4 class="text-xl font-bold">
+                Get in touch with us! Send us an email!
+              </h4>
+              <div class="border-2 rounded bg-white">
+                <input
+                  type="text"
+                  placeholder="Enter your email"
+                  class="bg-transparent px-4 py-1 outline-none border-none text-black"
+                />
+              </div>
+              <div class="border-2 rounded bg-white">
+                <textarea
+                  placeholder="Enter your enquiry"
+                  class="min-h-[150px] w-full bg-transparent px-4 py-1 outline-none border-none text-black"
+                ></textarea>
+              </div>
+              <button
+                class="w-full bg-indigo-500 text-white font-bold rounded p-2"
+              >
+                Submit Enquiry
+              </button>
             </div>
           </form>
         </div>
       </div>
-      <div
-        class="relative grid grid-cols-2 z-10 w-[90%] lg:w-[75%] py-20 mx-auto"
-      >
-        <div class="col-span-1 flex flex-col gap-7 pt-20">
-          <h1 class="text-6xl lg:text-7xl font-bold">
-            Build your website <br />
-            Better with us
-          </h1>
-          <h4 class="w-[70%]">
-            Our team of passionate web developers and designers is eager to help
-            you present your business online
-          </h4>
-          <button class="rounded-full bg-[#5aa6ff] px-10 font-bold py-5 w-fit">
-            Contact Us For Enquiry
-          </button>
-        </div>
-        <div class="col-span-1 overflow-visible">
-          <img
-            src="./src/images/hero.png"
-            class="w-100"
-            alt="Justily | Web Design and Development"
-          />
-        </div>
-      </div>
-      <svg
-        class="absolute top-0 right-0 z-0"
-        viewBox="0 0 1280 949"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0H1280V635.864L982.18 423.124C949.617 399.863 906.322 398.255 872.124 419.037L0 949V0Z"
-          fill="url(#paint0_radial_90_153)"
-        />
-        <defs>
-          <radialGradient
-            id="paint0_radial_90_153"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(243.5 336.606) rotate(2.23868) scale(878.671 1718.08)"
-          >
-            <stop stop-color="#5A92FF" />
-            <stop offset="0.39745" stop-color="#5E5AFF" />
-          </radialGradient>
-        </defs>
-      </svg>
-    </header>
+    </footer>
   </body>
+  <script>
+    const swiper_benefits = new Swiper(".swiper_benefits", {
+      loop: true,
+      slidesPerView: 3.8,
+      spaceBetween: 40,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    const swiper_portfolio = new Swiper(".swiper_portfolio", {
+      loop: true,
+      slidesPerView: 3.6,
+      spaceBetween: 40,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    const swiper_portfolio_2 = new Swiper(".swiper_portfolio_2", {
+      loop: true,
+      slidesPerView: 3.2,
+      spaceBetween: 40,
+      autoplay: {
+        delay: 3900,
+        disableOnInteraction: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
 </html>
