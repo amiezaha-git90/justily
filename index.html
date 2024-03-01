@@ -452,7 +452,7 @@
           <h2 class="text-4xl font-bold mb-16 mx-auto leading-[60px]">
             Alternately search our work which relate to your endeavour
           </h2>
-          <div class="border-2 rounded p-4 shadow-xl shadow-gray-100">
+          <div class="outline outline-2 outline-gray-300 hover:outline-4 focus-within:outline-indigo-500 hover:outline-indigo-500 rounded p-4 shadow-xl shadow-gray-100 transition-all ease duration-100">
             <form action="">
               <div
                 class="flex items-center px-2 py-1 group focus-within:!bg-white bg-white"
@@ -485,9 +485,9 @@
             <h4 class="text-2xl">Check our work by category</h4>
             <span class="text-indigo-400 font-bold text-xl"> More... </span>
           </div>
-          <div class="grid grid-cols-3 gap-7 mx-auto pt-10 pb-40 py-4">
+          <div class="grid grid-cols-3 gap-7 mx-auto py-10">
             <div
-              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400"
+              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400 transition-all ease-in-out duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
               <img
                 src="./src/images/Image_24.png"
@@ -495,11 +495,15 @@
                 class="w-full object-fill"
               />
               <div
-                class="absolute left-0 bottom-0 bg-[#1679C0] min-h-[50%] w-full z-20 rounded-b-xl"
-              ></div>
+                class="absolute left-0 bottom-0 bg-[#1679C0] bg-opacity-70 min-h-[50%] w-full z-20 rounded-b-xl p-10"
+              >
+                <h4 class="text-white font-bold text-2xl">
+                  Assets / Art Creation
+                </h4>
+              </div>
             </div>
             <div
-              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400"
+              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400 transition-all ease-in-out duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
               <img
                 src="./src/images/Image_25.png"
@@ -507,11 +511,15 @@
                 class="w-full object-fill"
               />
               <div
-                class="absolute left-0 bottom-0 bg-[#1679C0] bg-opacity-60 min-h-[50%] w-full z-20 rounded-b-xl"
-              ></div>
+                class="absolute left-0 bottom-0 bg-[#1679C0] bg-opacity-70 min-h-[50%] w-full z-20 rounded-b-xl p-10"
+              >
+                <h4 class="text-white font-bold text-2xl">
+                  Web Design / Web Development
+                </h4>
+              </div>
             </div>
             <div
-              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400"
+              class="col-span-1 relative min-h-[400px] drop-shadow-lg bg-white rounded-[40px] overflow-hidden border-2 border-slate-400 transition-all ease-in-out duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
               <img
                 src="./src/images/Image_26.png"
@@ -519,15 +527,32 @@
                 class="w-full object-fill"
               />
               <div
-                class="absolute left-0 bottom-0 bg-[#1679C0] min-h-[50%] w-full z-20 rounded-b-xl"
-              ></div>
+                class="absolute left-0 bottom-0 bg-[#1679C0] bg-opacity-70 min-h-[50%] w-full z-20 rounded-b-xl p-10"
+              >
+                <h4 class="text-white font-bold text-2xl">Codes</h4>
+              </div>
             </div>
           </div>
+          <p class="text-center text-gray-500">
+            We expertise in HTML5, css and javascript. We also delivers our
+            projects using Nuxt Vue Framework as front end development. Library
+            such as Tailwind CSS and Bootstrap are crucial for us to deliver
+            what our customers requirement on hte end product of our work
+          </p>
         </div>
       </section>
     </main>
 
-    <footer class="w-full bg-black text-white py-20">
+    <footer
+      class="w-full text-white py-20"
+      style="
+        background: radial-gradient(
+          68.59% 180.99% at 19.02% 35.47%,
+          #5a92ff 0%,
+          #5e5aff 39.75%
+        );
+      "
+    >
       <div class="w-[70%] mx-auto grid grid-cols-3 p-5">
         <div class="col-span-1 flex flex-col gap-2">
           <h2 class="text-5xl font-bold mb-5">
@@ -553,17 +578,17 @@
                 <input
                   type="text"
                   placeholder="Enter your email"
-                  class="bg-transparent px-4 py-1 outline-none border-none text-black"
+                  class="bg-transparent outline-none border-none text-black text-sm p-3"
                 />
               </div>
               <div class="border-2 rounded bg-white">
                 <textarea
                   placeholder="Enter your enquiry"
-                  class="min-h-[150px] w-full bg-transparent px-4 py-1 outline-none border-none text-black"
+                  class="min-h-[150px] w-full bg-transparent p-3 outline-none border-none text-black text-sm"
                 ></textarea>
               </div>
               <button
-                class="w-full bg-indigo-500 text-white font-bold rounded p-2"
+                class="w-full bg-indigo-800 text-white font-bold rounded p-2"
               >
                 Submit Enquiry
               </button>
