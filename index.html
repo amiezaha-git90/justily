@@ -68,6 +68,11 @@
         /* box-shadow: 5px 7px 15px rgb(237, 229, 237); */
       }
 
+      .swiper-wrapper {
+        transition-timing-function: linear !important;
+        -webkit-transition-timing-function: linear !important;
+      }
+
       .scrollable::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -88,7 +93,11 @@
         animation: fade-up 0.5s ease-out;
       }
 
-      .content-section {
+      @media (prefers-reduced-motion: no-preference) {
+        .device_animation,
+        .about_animation {
+          animation: fade-up 1s 1;
+        }
       }
     </style>
   </head>
@@ -400,100 +409,101 @@
       <!-- device section -->
       <section class="h-screen mx-auto relative">
         <div class="grid gap-12 justify-center mt-14">
-          <div class="flex gap-12 items-center justify-center">
-            <div class="group">
-              <div
-                class="grid w-[70px] h-[70px] hover:bg-[#F2F1FF] hover:-translate-y-1 hover:scale-110 duration-300 transition ease-in-out delay-100 rounded-full cursor-pointer flex justify-center items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-device-laptop cursor-pointer"
-                  width="50"
-                  height="50"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  onclick="changeDevice('laptop')"
+          <div class="device_wrapper">
+            <div
+              class="flex gap-12 items-center justify-center device_animation device_list"
+            >
+              <div class="group">
+                <div
+                  class="grid w-[70px] h-[70px] hover:bg-[#F2F1FF] hover:-translate-y-1 hover:scale-110 duration-300 transition ease-in-out delay-100 rounded-full cursor-pointer flex justify-center items-center"
                 >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M3 19l18 0" />
-                  <path
-                    d="M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z"
-                  />
-                </svg>
-              </div>
-              <label
-                class="font-bold flex justify-center w-full h-full text-transparent group-hover:text-black transform-all duration-500 ease group-hover:translate-y-0 translate-y-20"
-                >Laptop</label
-              >
-            </div>
-            <div class="group">
-              <div
-                class="w-[70px] h-[70px] hover:bg-[#F2F1FF] hover:-translate-y-1 hover:scale-110 duration-300 transition ease-in-out delay-100 rounded-full cursor-pointer flex justify-center items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-device-ipad-horizontal cursor-pointer"
-                  width="50"
-                  height="50"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  onclick="changeDevice('tablet')"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-device-laptop cursor-pointer"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    onclick="changeDevice('laptop')"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 19l18 0" />
+                    <path
+                      d="M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z"
+                    />
+                  </svg>
+                </div>
+                <label
+                  class="font-bold flex justify-center w-full h-full text-transparent group-hover:text-black transform-all duration-500 ease group-hover:translate-y-0 translate-y-[15px]"
+                  >Laptop</label
                 >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M3 6a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-12z"
-                  />
-                  <path d="M9 17h6" />
-                </svg>
               </div>
-              <label
-                class="font-bold flex justify-center w-full h-full text-transparent group-hover:text-black transform-all duration-500 ease group-hover:translate-y-0 translate-y-20"
-                >Tablet</label
-              >
-            </div>
-            <div class="group">
-              <div
-                class="w-[70px] h-[70px] hover:bg-[#F2F1FF] hover:-translate-y-1 hover:scale-110 duration-300 transition ease-in-out delay-100 rounded-full cursor-pointer flex justify-center items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-device-mobile cursor-pointer"
-                  width="50"
-                  height="50"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  onclick="changeDevice('phone')"
+              <div class="group">
+                <div
+                  class="w-[70px] h-[70px] hover:bg-[#F2F1FF] hover:-translate-y-1 hover:scale-110 duration-300 transition ease-in-out delay-100 rounded-full cursor-pointer flex justify-center items-center"
                 >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z"
-                  />
-                  <path d="M11 4h2" />
-                  <path d="M12 17v.01" />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-device-ipad-horizontal cursor-pointer"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    onclick="changeDevice('tablet')"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M3 6a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-12z"
+                    />
+                    <path d="M9 17h6" />
+                  </svg>
+                </div>
+                <label
+                  class="font-bold flex justify-center w-full h-full text-transparent group-hover:text-black transform-all duration-500 ease group-hover:translate-y-0 translate-y-[15px]"
+                  >Tablet</label
+                >
               </div>
-              <label
-                class="font-bold flex justify-center w-full h-full text-transparent group-hover:text-black transform-all duration-500 ease group-hover:translate-y-0 translate-y-20"
-                >Phone</label
-              >
+              <div class="group">
+                <div
+                  class="w-[70px] h-[70px] hover:bg-[#F2F1FF] hover:-translate-y-1 hover:scale-110 duration-300 transition ease-in-out delay-100 rounded-full cursor-pointer flex justify-center items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-device-mobile cursor-pointer"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    onclick="changeDevice('phone')"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z"
+                    />
+                    <path d="M11 4h2" />
+                    <path d="M12 17v.01" />
+                  </svg>
+                </div>
+                <label
+                  class="font-bold flex justify-center w-full h-full text-transparent group-hover:text-black transform-all duration-500 ease group-hover:translate-y-0 translate-y-[15px]"
+                  >Phone</label
+                >
+              </div>
             </div>
           </div>
-          <div
-            id="laptopContent"
-            class="relative flex justify-center content-section"
-          >
+          <div id="laptopContent" class="relative flex justify-center">
             <img
               src="./src/images/laptop.png"
               alt=""
@@ -532,10 +542,7 @@
               </div>
             </div>
           </div>
-          <div
-            id="tabletContent"
-            class="relative flex justify-center content-section hidden"
-          >
+          <div id="tabletContent" class="relative flex justify-center hidden">
             <img
               src="./src/images/tablet.png"
               alt=""
@@ -574,7 +581,7 @@
               </div>
             </div>
           </div>
-          <div id="phoneContent" class="relative content-section hidden">
+          <div id="phoneContent" class="relative hidden">
             <div class="flex justify-center">
               <img
                 src="./src/images/phone.png"
@@ -627,24 +634,26 @@
           />
         </div>
         <div class="grid grid-cols-2 w-[70%] mx-auto py-40 p-5">
-          <div class="col-span-1 relative">
-            <div class="flex flex-col gap-5 pr-10">
-              <h2 class="text-4xl font-bold leading-[60px]">
-                <q
-                  >Our team specializes in web designing, assets making and
-                  website development</q
-                >
-              </h2>
-              <p class="w-[70%] text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+          <div class="col-span-1 about_wrapper">
+            <div class="relative about_animation about_div">
+              <div class="flex flex-col gap-5 pr-10">
+                <h2 class="text-4xl font-bold leading-[60px]">
+                  <q
+                    >Our team specializes in web designing, assets making and
+                    website development</q
+                  >
+                </h2>
+                <p class="w-[70%] text-gray-500">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+              <div
+                class="absolute right-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-500 to-transparent rounded-lg"
+              ></div>
             </div>
-            <div
-              class="absolute right-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-500 to-transparent rounded-lg"
-            ></div>
           </div>
           <div class="col-span-1 flex flex-col items-end justify-end">
             <div class="grid grid-cols-3 gap-4 py-7">
@@ -880,12 +889,15 @@
       },
     });
     const swiper_portfolio = new Swiper(".swiper_portfolio", {
+      freeMode: true,
       loop: true,
-      slidesPerView: 3.6,
+      allowTouchMove: true,
+      slidesPerView: 3.2,
       spaceBetween: 40,
+      speed: 10000,
       autoplay: {
-        delay: 3500,
-        disableOnInteraction: true,
+        delay: 0,
+        disableOnInteraction: false,
       },
       pagination: {
         el: ".swiper-pagination",
@@ -893,12 +905,16 @@
       },
     });
     const swiper_portfolio_2 = new Swiper(".swiper_portfolio_2", {
+      freeMode: true,
       loop: true,
+      allowTouchMove: true,
       slidesPerView: 3.2,
       spaceBetween: 40,
+      speed: 10000,
       autoplay: {
-        delay: 3900,
-        disableOnInteraction: true,
+        delay: 0,
+        reverseDirection: true,
+        disableOnInteraction: false,
       },
       pagination: {
         el: ".swiper-pagination",
@@ -923,5 +939,27 @@
         tabletContent.style.display = "none";
       }
     }
+
+    // scroll behaviour
+    function observeScrollSection(
+      wrapperSelector,
+      targetSelector,
+      animationClass
+    ) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const target = entry.target.querySelector(targetSelector);
+          if (entry.isIntersecting) {
+            target.classList.add(animationClass);
+          } else {
+            target.classList.remove(animationClass);
+          }
+        });
+      });
+      observer.observe(document.querySelector(wrapperSelector));
+    }
+
+    observeScrollSection(".device_wrapper", ".device_list", "device_animation");
+    observeScrollSection(".about_wrapper", ".about_div", "about_animation");
   </script>
 </html>
