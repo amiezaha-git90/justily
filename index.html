@@ -78,6 +78,29 @@
         height: 0;
       }
 
+      .nav_menu {
+        display: block;
+        position: relative;
+        padding: 0.2em 0;
+        overflow: hidden;
+      }
+      .nav_menu::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0.2em;
+        background-color: hotpink;
+        opacity: 1;
+        transition: width 0.3s ease;
+      }
+
+      .nav_menu:hover::after,
+      .nav_menu:focus::after {
+        width: 100%;
+      }
+
       @keyframes fade-up {
         0% {
           opacity: 0;
@@ -89,13 +112,40 @@
         }
       }
 
-      .animate-fade-up {
-        animation: fade-up 0.5s ease-out;
+      @keyframes pop-up {
+        0% {
+          transform: translateY(40px);
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(10px) scale(1.6);
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes move-up-down {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(0, 50px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
       }
 
       @media (prefers-reduced-motion: no-preference) {
         .fade-up-animation {
           animation: fade-up 1s 1;
+        }
+        .pop-up-animation {
+          animation: pop-up 1s 1;
+        }
+        .move-up-down-animation {
+          animation: move-up-down 1s 1;
         }
       }
     </style>
@@ -138,9 +188,9 @@
               ><span class="text-amber-400">ily</span>
             </h2>
             <div class="flex items-center gap-[70px] px-10">
-              <a href="" class="font-semibold">Home</a>
-              <a href="" class="font-semibold">About Us</a>
-              <div class="flex items-center gap-2 font-semibold">
+              <a href="" class="font-semibold nav_menu">Home</a>
+              <a href="" class="font-semibold nav_menu">About Us</a>
+              <div class="flex items-center gap-2 font-semibold nav_menu cursor-pointer">
                 Our Work
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
