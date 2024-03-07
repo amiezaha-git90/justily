@@ -50,7 +50,7 @@
     transform: translateY(0px);
   }
 }
-@keyframes opacity {
+@keyframes opacity-transition {
   0% {
     opacity: 0;
   }
@@ -62,16 +62,95 @@
     opacity: 0;
   }
 }
+@keyframes fadein-start {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadein-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pop-up {
+  0% {
+    transform: translateY(40px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.6);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes move-up-down {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 
-.animation-wander-left {
-  animation: wander-left 10s infinite ease, opacity 10s ease infinite;
-}
-.animation-wander-right {
-  animation: wander-right 7s infinite ease, opacity 7s ease infinite;
-}
-.animation-wander-up {
-  animation: wander-up 5s infinite ease, opacity 5s ease infinite;
-}
-.animation-wander-down {
-  animation: wander-down 12s infinite ease, opacity 12s ease infinite;
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up-animation {
+    animation: fade-up 1s 1;
+  }
+  .pop-up-animation {
+    animation: pop-up 1s 1;
+  }
+  .fadein-start-normal{
+    animation: fadein-start 3s ease;
+  }
+  .fadein-start-fast{
+    animation: fadein-start 2s ease;
+  }
+  .fadein-start-fastest{
+    animation: fadein-start 1s ease;
+  }
+  .fadein-up-fastest{
+    animation: fadein-up 1s ease;
+  }
+  .move-up-down-animation {
+    animation: move-up-down 1s 1;
+  }
+  .animation-wander-left {
+    animation: wander-left 10s infinite ease,
+      opacity-transition 10s ease infinite;
+  }
+  .animation-wander-right {
+    animation: wander-right 7s infinite ease,
+      opacity-transition 7s ease infinite;
+  }
+  .animation-wander-up {
+    animation: wander-up 5s infinite ease, opacity-transition 5s ease infinite;
+  }
+  .animation-wander-down {
+    animation: wander-down 12s infinite ease,
+      opacity-transition 12s ease infinite;
+  }
 }
