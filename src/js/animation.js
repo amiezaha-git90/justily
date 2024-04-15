@@ -17,7 +17,7 @@ function observeScrollSection(wrapperSelector, targetSelector, animationClass) {
 // register animation trigger here
 
 observeScrollSection(".hero_wrapper", ".banner-1", "fadein-start-normal");
-observeScrollSection(".hero_wrapper", ".banner-2", "fadein-start-fast");
+observeScrollSection(".hero_wrapper", ".banner-2", "fadein-start-fastest");
 observeScrollSection(".hero_wrapper", ".banner-3", "fadein-up-fastest");
 observeScrollSection(".device_wrapper", ".device_list", "fade-up-animation");
 observeScrollSection(".about_wrapper", ".about_div", "fade-up-animation");

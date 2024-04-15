@@ -20,9 +20,10 @@
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss-animated@1.0.1/src/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-    <script src="./src/js/SmoothScroll.js"></script>
+    <script src="https://www.justilysolutions.com/src/js/SmoothScroll.js"></script>
     <link rel="stylesheet" href="./src/css/main.css" />
     <link rel="stylesheet" href="./src/css/animation.css" />
+    <link rel="icon" type="image/x-icon" href="./src/images/favicon.png" />
     <script>
       tailwind.config = {
         theme: {
@@ -73,11 +74,18 @@
           class="relative flex justify-between items-center mx-auto py-5 z-10"
         >
           <div class="flex items-center gap-10">
-            <img
-              src="./src/images/Justily_logo.png"
-              class="w-auto h-10"
-              alt="Justily | Web Development Service"
-            />
+            <div class="relative w-[100px] h-10">
+              <img
+                src="./src/images/justily_logo.png"
+                class="w-auto h-auto cursor-pointer hover:opacity-0 transform-ease-linear duration-500 absolute z-20"
+                alt="Justily | Web Development Service"
+              />
+              <img
+                src="./src/images/justily_logo_black.png"
+                class="w-auto h-auto cursor-pointer absolute z-10"
+                alt="Justily | Web Development Service"
+              />
+            </div>
             <div class="flex items-center gap-[70px] px-10">
               <a href="" class="font-semibold nav_menu">Home</a>
               <a href="" class="font-semibold nav_menu">About Us</a>
